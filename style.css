@@ -4,12 +4,25 @@
     align-items: center;
     margin-left: 10px;
 }
+
 h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace, 'Arial Narrow', Arial, sans-serif;
     font-size: 5rem;
     margin-left: 10px;
     margin-top: -10PX;
     margin-bottom: -10PX;
+}
+
+.name {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    position: relative;
+    align-items: center;
+    display: flex;
+    /* left: 50%;
+    right: 50%; */
+    justify-content: center;
+    color: red
 }
 
 .bgImage {
@@ -19,15 +32,25 @@ h1 {
     opacity: 25%;
 }
 
-.buttonDesign {
+.btn {
     position: relative;
+    justify-content: center;
     padding: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-
-    /* left:50%;
-    right: 50%; */
+    left:50%;
+    right: 50%;
 }
 .title {
     width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    right: 0;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 600px){
+    h1{
+        font-size: 10px;
+    }
 }

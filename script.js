@@ -1,27 +1,27 @@
 const baseURL = "https://ghibliapi.herokuapp.com/people"
+// console.log(baseURL)
 
-//Table of Contents//
-function generate_table() {
-    let main = document.getElementsByTagName("main")[0];
-    let tbl = document.createElement("table");
-    let tblBody = document.createElement("tbody");
+const nme = document.querySelector(".name");
+const mve = document.querySelector(".film");
+const yr = document.querySelector(".year");
+const btn = document.querySelector(".btn");
 
-    for (let i = 0; i < 1; i++) {
-        let row = document.createElement("tr");
-
-        for (let j = 0; j < 3; j++) {
-            let cell = document.createElement("td");
-            let cellText = document.createTextNode("Character " + i + ", Movie " + j);
-            cell.appendChild(cellText);
-            row.appendChild(cell);
-        }
-        // add the row to the end of the table body
-        tblBody.appendChild(row);
-    }
-
-    // put the <tbody> in the <table>
-    tbl.appendChild(tblBody);
-    main.appendChild(tbl);
-    tbl.setAttribute("border", "2");
+//Contents//
+async function apiFetch(){
+    const ranInfo = (Math.floor(Math.random() * 40 -2) + 2)
+    const response = await fetch(`${baseURL}`)
+    console.log(response);
+    const json = await response.json();
+    displayInfo(json, ranInfo)
+    console.log(json)
 }
+btn.addEventListener('click', apiFetch)
 
+//Display//
+let displayInfo = (data, ranInfo) => {
+    
+    nme.innerHTML = data[ranInfo].name;
+    mve.innerHTML = data.film;
+    yr.innerHTML = data.year;
+    console.log(data[0].name)
+}
