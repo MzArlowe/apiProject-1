@@ -21,7 +21,7 @@ btn.addEventListener('click', apiFetch)
 let displayInfo = (data, ranInfo) => {
     
     nme.innerHTML = data[ranInfo].name;
-    mve.innerHTML = data.film;
-    yr.innerHTML = data.year;
+    // mve.innerHTML = data.film;
+    // yr.innerHTML = data.year;
     console.log(data[0].name)
 }
